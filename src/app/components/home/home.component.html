@@ -1,0 +1,87 @@
+<div class="py-3 mb-5 bg-body-secondary border-5 border-bottom border-primary" style="background-image: url(https://images.unsplash.com/reserve/uZYSV4nuQeyq64azfVIn_15130980706_64134efc6e_o.jpg?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2067&q=80);
+        background-position: center; background-size: cover;">
+    <div class="container py-5">
+        <div class="d-flex justify-content-center justify-content-sm-start">
+            <div class="p-2 h1 fw-bold text-bg-dark headline m-0">Ngữ pháp tiếng Anh</div>
+        </div>
+    </div>
+</div>
+
+<div class="container-sm mb-5">
+    <div class="d-flex flex-wrap gap-4 justify-content-between align-items-stretch">
+        <ng-container *ngIf="posts$ | async as posts; else loading">
+            <div *ngFor="let post of posts" class="card flex-grow-1" style="flex-basis: 0; min-width: min(360px, 100%);"
+                [routerLink]="'/details/'+post.id">
+                <div class="card-body">
+                    <h4 class="card-title text-primary headline" style="font-weight: bold !important;">{{post.title}}
+                    </h4>
+                    <p class="card-text text-body-secondary">{{post.shortDescription}}</p>
+                    <div class="d-flex gap-2">
+                        <small *ngFor="let tag of post.tags"
+                            class="d-inline-flex px-2 py-1 text-body-emphasis bg-body-secondary border border-2 rounded-2">{{tag}}</small>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        <ng-template #loading>
+            <div class="card flex-grow-1" style="flex-basis: 0; min-width: min(360px, 100%);">
+                <div class="card-body placeholder-wave">
+                    <h4 class="card-title text-primary headline placeholder w-25 mb-3"></h4>
+                    <p class="card-text text-secondary placeholder placeholder-sm w-100 mb-2"></p>
+                    <p class="card-text text-secondary placeholder placeholder-sm w-50 mb-2"></p>
+                    <p class="card-text text-secondary placeholder placeholder-sm w-75"></p>
+                    <div class="d-flex gap-2">
+                        <small
+                            class="d-inline-flex px-3 py-3 text-secondary border border-2 rounded-2 placeholder"></small>
+                        <small
+                            class="d-inline-flex px-3 py-3 text-secondary  border border-2 rounded-2 placeholder"></small>
+                    </div>
+                </div>
+            </div>
+            <div class="card flex-grow-1" style="flex-basis: 0; min-width: min(360px, 100%);">
+                <div class="card-body placeholder-wave">
+                    <h4 class="card-title text-primary headline placeholder w-25 mb-3"></h4>
+                    <p class="card-text text-secondary placeholder placeholder-sm w-100 mb-2"></p>
+                    <p class="card-text text-secondary placeholder placeholder-sm w-50 mb-2"></p>
+                    <p class="card-text text-secondary placeholder placeholder-sm w-75"></p>
+                    <div class="d-flex gap-2">
+                        <small
+                            class="d-inline-flex px-3 py-3 text-secondary border border-2 rounded-2 placeholder"></small>
+                        <small
+                            class="d-inline-flex px-3 py-3 text-secondary  border border-2 rounded-2 placeholder"></small>
+                    </div>
+                </div>
+            </div>
+            <div class="card flex-grow-1" style="flex-basis: 0; min-width: min(360px, 100%);">
+                <div class="card-body placeholder-wave">
+                    <h4 class="card-title text-primary headline placeholder w-25 mb-3"></h4>
+                    <p class="card-text text-secondary placeholder placeholder-sm w-100 mb-2"></p>
+                    <p class="card-text text-secondary placeholder placeholder-sm w-50 mb-2"></p>
+                    <p class="card-text text-secondary placeholder placeholder-sm w-75"></p>
+                    <div class="d-flex gap-2">
+                        <small
+                            class="d-inline-flex px-3 py-3 text-secondary border border-2 rounded-2 placeholder"></small>
+                        <small
+                            class="d-inline-flex px-3 py-3 text-secondary  border border-2 rounded-2 placeholder"></small>
+                    </div>
+                </div>
+            </div>
+            <div class="card flex-grow-1" style="flex-basis: 0; min-width: min(360px, 100%);">
+                <div class="card-body placeholder-wave">
+                    <h4 class="card-title text-primary headline placeholder w-25 mb-3"></h4>
+                    <p class="card-text text-secondary placeholder placeholder-sm w-100 mb-2"></p>
+                    <p class="card-text text-secondary placeholder placeholder-sm w-50 mb-2"></p>
+                    <p class="card-text text-secondary placeholder placeholder-sm w-75"></p>
+                    <div class="d-flex gap-2">
+                        <small
+                            class="d-inline-flex px-3 py-3 text-secondary border border-2 rounded-2 placeholder"></small>
+                        <small
+                            class="d-inline-flex px-3 py-3 text-secondary  border border-2 rounded-2 placeholder"></small>
+                    </div>
+                </div>
+            </div>
+
+        </ng-template>
+
+    </div>
+</div>

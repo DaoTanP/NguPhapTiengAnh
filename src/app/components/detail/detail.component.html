@@ -1,0 +1,50 @@
+<div class="py-3 mb-5 bg-body-secondary border-5 border-bottom border-primary" style="background-image: url(https://images.unsplash.com/reserve/uZYSV4nuQeyq64azfVIn_15130980706_64134efc6e_o.jpg?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2067&q=80);
+        background-position: center; background-size: cover;">
+    <div class="container py-5">
+        <div class="d-flex justify-content-center justify-content-sm-start">
+            <ng-container *ngIf="blogPost$ | async as blogPost; else loading">
+                <div class="p-2 h1 fw-bold text-bg-primary headline m-0">{{blogPost.title}}</div>
+            </ng-container>
+            <ng-template #loading>
+                <div class="placeholder-wave">
+                    <div class="p-2 h1 placeholder m-0">Lorem ipsum dolor sit amet.</div>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-9 col-lg-8 mb-5 text-body" style="--bs-text-opacity: 0.85; font-size: 1.075rem;">
+            <ng-container *ngIf="blogPost$ | async as blogPost; else loadingContent">
+                <div [innerHTML]="blogPost.content"></div>
+            </ng-container>
+            <ng-template #loadingContent>
+                <div class="placeholder-wave d-flex flex-column gap-2">
+                    <div class="placeholder col-7"></div>
+                    <div class="placeholder col-9"></div>
+                    <div class="placeholder placeholder-lg col-10"></div>
+                    <div class="placeholder col-12"></div>
+                    <div class="placeholder col-8 placeholder-sm"></div>
+                    <div class="placeholder col-5 placeholder-lg"></div>
+                    <div class="placeholder col-12"></div>
+                    <div class="placeholder placeholder-lg col-4"></div>
+                    <div class="placeholder col-7"></div>
+                    <div class="placeholder col-5 placeholder-lg"></div>
+                    <div class="placeholder col-9"></div>
+                    <div class="placeholder placeholder-lg col-6"></div>
+                    <div class="placeholder col-8 placeholder-sm"></div>
+                    <div class="placeholder col-7"></div>
+                    <div class="placeholder col-5 placeholder-lg"></div>
+                    <div class="placeholder col-9"></div>
+                    <div class="placeholder col-12"></div>
+                    <div class="placeholder col-8 placeholder-sm"></div>
+                </div>
+            </ng-template>
+        </div>
+        <div class="col">
+
+        </div>
+    </div>
+</div>
