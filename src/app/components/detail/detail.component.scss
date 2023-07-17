@@ -24,3 +24,7 @@ dd {
     position: relative;
     margin-left: 1em;
 }
+
+li:not(:first-child) {
+    margin-top: 0.5rem;
+}

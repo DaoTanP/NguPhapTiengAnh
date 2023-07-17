@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs';
-import { HttpService } from 'src/app/services/http.service';
+import { ArticleService } from 'src/app/services/article.service';
 
 @Component({
   selector: 'app-detail',
@@ -12,10 +12,10 @@ import { HttpService } from 'src/app/services/http.service';
 export class DetailComponent
 {
   protected blogPost$ = this.route.paramMap.pipe(switchMap(params =>
-    this.httpService.getPost(params.get('id') || 'not-found'))
+    this.articleService.getArticleById(params.get('id') || 'not-found'))
   );
 
-  constructor(private httpService: HttpService, private route: ActivatedRoute)
+  constructor(private articleService: ArticleService, private route: ActivatedRoute)
   {
   }
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpService } from 'src/app/services/http.service';
+import { ArticleService } from 'src/app/services/article.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,7 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class HomeComponent
 {
-  protected posts$ = this.httpService.getAllPost();
+  protected posts$ = this.articleService.getArticles();
 
-  constructor(private httpService: HttpService, private router: Router) { }
+  constructor(private articleService: ArticleService, private router: Router) { }
 }
